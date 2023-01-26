@@ -1,9 +1,6 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import {Box} from "@mui/material";
+
 
 function App() {
   function formatName(user) {
@@ -14,14 +11,28 @@ function App() {
     firstName: 'Patel',
     lastName: 'Arpita'
   };
+
   
+
   const element = (
     <h1>
       Hello, {formatName(user)}!
     </h1>
   )
+  const [time, setTime] = useState('');
+  function dateNew() {
+  console.log('called',new Date().toLocaleTimeString())
+    return <h2>It is {new Date().toLocaleTimeString()}.</h2>
+  }
+  useEffect(() => {
+    setInterval(setTime(dateNew()), 1000);
+  },[]);
+  
   return (
-      <div>{element}</div>
+      <div>
+        {element}
+        <div>{time}</div>
+        </div>
   );
 }
 
