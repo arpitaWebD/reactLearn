@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-import Avatar from './component/avatar.js';
-import Clock from './component/class.js';
 import ClockUI from './component/ClockUI.js';
 
 function App() {
@@ -30,11 +28,9 @@ function App() {
   },[]);
   
   return (
-      <div>
+      <div className='main'>
         {element}
         <h2>{time}</h2>
-        <Avatar size={30}></Avatar>
-        <Clock></Clock>
         <ClockUI></ClockUI>
         </div>
   );
