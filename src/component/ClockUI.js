@@ -5,19 +5,21 @@ function ClockUI() {
 
   function dateNew() {
     if (new Date().getHours()) {
-      console.log("new Date().getHours()", new Date().getHours());
       document
         .querySelector(".short")
         .style.setProperty("--hr", `${new Date().getHours() * 30}deg`);
+        if(new Date().getMinutes() > 50) {
+          document
+        .querySelector(".short")
+        .style.setProperty("--hr", `${new Date().getHours() * 30 + 30}deg`);
+        }
     }
     if (new Date().getMinutes()) {
-      console.log("new Date().getMinutes()", new Date().getMinutes());
       document
         .querySelector(".long")
         .style.setProperty("--min", `${new Date().getMinutes() * 6}deg`);
     }
     if (new Date().getSeconds()) {
-      console.log("new Date().getSeconds()", new Date().getSeconds());
       document
         .querySelector(".sec")
         .style.setProperty("--sec", `${new Date().getSeconds() * 6}deg`);
