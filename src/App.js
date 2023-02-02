@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import Search from './component/search.js';
+import Counter from './component/Counter.js';
+import CheckList from './component/CheckList.js';
 import './App.css';
 
 import ClockUI from './component/ClockUI.js';
@@ -30,8 +33,11 @@ function App() {
   return (
       <div className='main'>
         {element}
-        <h2>{time}</h2>
+        {/* <h2>{time}</h2>
         <ClockUI></ClockUI>
+        <Search/>
+        <Counter/> */}
+        <CheckList/>
         </div>
   );
 }
